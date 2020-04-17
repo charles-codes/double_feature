@@ -31,7 +31,7 @@ $("#add-movie-1").on("click", function(event) {
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
 
-    $("#movies-view").append(movieDiv);
+    $("#movies-view-1").append(movieDiv);
   })
 
   // clear movie input 1 text field
@@ -71,7 +71,7 @@ $("#add-movie-2").on("click", function(event) {
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
 
-    $("#movies-view").append(movieDiv);
+    $("#movies-view-2").append(movieDiv);
   })
 
   // clear movie input 2 text field
