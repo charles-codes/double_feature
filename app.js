@@ -33,6 +33,9 @@ $("#add-movie-1").on("click", function(event) {
 
     $("#movies-view").append(movieDiv);
   })
+
+  // clear movie input 1 text field
+  $("#movie-input-1").val("");
 })
 
 // on click event handler for movie 2
@@ -70,4 +73,37 @@ $("#add-movie-2").on("click", function(event) {
 
     $("#movies-view").append(movieDiv);
   })
+
+  // clear movie input 2 text field
+  $("#movie-input-2").val("");
+})
+
+// on click event handler for displaying double-feature title
+$("#add-df-title").on("click", function(event) {
+  event.preventDefault();
+
+  var title = $("#df-title-input").val().trim();
+  var titleH2 = $("<h2>");
+
+  titleH2.text(title);
+
+  $("#df-title-view").append(titleH2);
+
+  // clear the double-feature title text field
+  $("#df-title-input").val("");
+})
+
+// on click event handler for displaying double-feature blurb
+$("#add-df-blurb").on("click", function(event) {
+  event.preventDefault();
+  
+  var blurb = $("#df-blurb-input").val().trim();
+  var blurbP = $("<p>");
+
+  blurbP.text(blurb);
+
+  $("#df-blurb-view").append(blurbP);
+
+  // clear the double-feature blurb text field
+  $("#df-blurb-input").val("");
 })
