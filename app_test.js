@@ -1,4 +1,4 @@
-// on click event handler for movie 1
+// universal on click event handler for movie 
 $("#add-df").on("click", function(event) {
   event.preventDefault();
 
@@ -70,7 +70,7 @@ $("#add-df").on("click", function(event) {
 
   titleH2.text(title);
 
-  $("#df-title-view").append(title);
+  $("#df-title-view").append(titleH2);
 
   // double-feature blurb display
   var blurb = $("#df-blurb-input").val().trim();
