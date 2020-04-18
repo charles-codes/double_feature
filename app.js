@@ -72,6 +72,9 @@ $("#add-movie-2").on("click", function(event) {
     movieDiv.append(image);
 
     $("#movies-view-2").append(movieDiv);
+
+    // setting movie-1 to localStorage
+    localStorage.setItem("movie-1", movieDiv);
   })
 
   // clear movie input 2 text field
@@ -87,7 +90,11 @@ $("#add-df-title").on("click", function(event) {
 
   titleH2.text(title);
 
-  $("#df-title-view").append(titleH2);
+  $("#df-title-view").append(title);
+
+  // setting title to localStorage
+  localStorage.setItem("title", title);
+  console.log(title);
 
   // clear the double-feature title text field
   $("#df-title-input").val("");
@@ -106,4 +113,11 @@ $("#add-df-blurb").on("click", function(event) {
 
   // clear the double-feature blurb text field
   $("#df-blurb-input").val("");
+})
+
+$("#favorite").on("click", function(event) {
+  event.preventDefault();
+
+  var faveTitle = localStorage.getItem("title");
+  $("#df-title-view").text(faveTitle);
 })
