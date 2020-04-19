@@ -109,3 +109,8 @@ function getSearchFields() {
   $("#df-title-input").val(savedTitle);
   $("#df-blurb-input").val(savedBlurb);
 }
+
+// on click function to call getSearchFields function
+$("#favorite").on("click", function() {
+  getSearchFields();
+})
