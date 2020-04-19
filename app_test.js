@@ -71,17 +71,13 @@ $("#add-df").on("click", function(event) {
   // double-feature title display
   var title = $("#df-title-input").val().trim();
   var titleH2 = $("<h2>");
-
   titleH2.text(title);
-
   $("#df-title-view").append(titleH2);
 
   // double-feature blurb display
   var blurb = $("#df-blurb-input").val().trim();
   var blurbP = $("<p>");
-
   blurbP.text(blurb);
-
   $("#df-blurb-view").append(blurbP);
 
   // set localStorage
