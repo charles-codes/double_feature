@@ -111,7 +111,7 @@ $("#favorite").on("click", function() {
   getSearchFields();
 })
 
-// empty / clear all content holding divs
+// empty/clear div which holds and displays all the content
 $("#clearDiv").on("click", function() {
   $("#df-display").empty();
 })

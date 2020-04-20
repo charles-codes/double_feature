@@ -20,6 +20,10 @@
     <div class="container">
       <h1>Find your films to curate your Double-Feature</h1>
 
+      <!-- empty div to view favorite buttons -->
+      <div id="buttons-view"></div>
+
+      <!-- form for inputting search values -->
       <form id="movie-form">
         <label for="movie-input">Select 1st Feature Film</label>
         <input type="text" id="movie-input-1">
@@ -36,15 +40,21 @@
         <label for="movie-input">Double-Feature Blurb</label>
         <input type="text" id="df-blurb-input">
         <br><br>
+
         <input type="submit" value="Create Double-Feature" id="add-df">
       </form>
+
     </div>
 
+    <!-- button for favorite / maybe don't need??? -->
     <button id="favorite">Favorite</button>
+    <br><br>
+
+    <!-- button for clearing/emptying the content display div -->
     <button id="clearDiv">Clear</button>
+    <br><br>
 
-    <br>
-
+    <!-- empty div for displaying double-feature content (movies, df title, and df blurb) -->
     <div class="container" id="df-display">
       <div id="df-title-view"></div>
       <hr>
