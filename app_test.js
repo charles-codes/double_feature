@@ -110,3 +110,8 @@ function getSearchFields() {
 $("#favorite").on("click", function() {
   getSearchFields();
 })
+
+// empty / clear all content holding divs
+$("#clearDiv").on("click", function() {
+  $("#df-display").empty();
+})
