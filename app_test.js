@@ -22,13 +22,9 @@ $("#add-df").on("click", function(event) {
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
 
-    var rating = response.Rated;
-    var pOne = $("<p>").text("Rating: " + rating);
+    var director = response.Director;
+    var pOne = $("<p>").text("Directed by " + director);
     movieDiv.append(pOne);
-
-    var released = response.Released;
-    var pTwo = $("<p>").text("Released: " + released);
-    movieDiv.append(pTwo);
 
     var plot = response.Plot;
     var pThree = $("<p>").text("Plot: " + plot);
@@ -49,13 +45,9 @@ $("#add-df").on("click", function(event) {
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
 
-    var rating = response.Rated;
-    var pOne = $("<p>").text("Rating: " + rating);
+    var director = response.Director;
+    var pOne = $("<p>").text("Directed by " + director);
     movieDiv.append(pOne);
-
-    var released = response.Released;
-    var pTwo = $("<p>").text("Released: " + released);
-    movieDiv.append(pTwo);
 
     var plot = response.Plot;
     var pThree = $("<p>").text("Plot: " + plot);
