@@ -77,16 +77,20 @@ $("#add-df").on("click", function(event) {
   $("#df-blurb-view").append(blurbP);
 
   // empty array to hold string values of the four search fields
-  var doubleFeature = [];
+  var doubleFeature = {
+    feature_1: movie_1,
+    feature_2: movie_2,
+    DFTitle: title,
+    DFBlurb: blurb
+  }
 
-  doubleFeature.push(movie_1);
-  doubleFeature.push(movie_2);
-  doubleFeature.push(title);
-  doubleFeature.push(blurb);
+  var dfArray = [];
+
+  dfArray.push(doubleFeature);
 
   console.log("Double-Feature: " + doubleFeature);
 
-  localStorage.key("df", JSON.stringify(doubleFeature));
+  localStorage.setItem("df", JSON.stringify(dfArray[0]));
 
   // set localStorage
   // localStorage.setItem("movie 1", movie_1);
@@ -109,10 +113,10 @@ function getSearchFields() {
   // var savedBlurb = localStorage.getItem("df blurb");
   var savedDF = JSON.parse(localStorage.getItem("df"));
 
-  $("#movie-input-1").val(savedDF[0]);
-  $("#movie-input-2").val(savedDF[1]);
-  $("#df-title-input").val(savedDF[2]);
-  $("#df-blurb-input").val(savedDF[3]);
+  $("#movie-input-1").val(savedDF.feature_1);
+  $("#movie-input-2").val(savedDF.feature_2);
+  $("#df-title-input").val(savedDF.DFTitle);
+  $("#df-blurb-input").val(savedDF.DFBlurb);
 
   // $("#movie-input-1").val(savedMovie1);
   // $("#movie-input-2").val(savedMovie2);
