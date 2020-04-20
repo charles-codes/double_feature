@@ -16,8 +16,6 @@ $("#add-df").on("click", function(event) {
     method: "GET"
   }).then(function(response) {
 
-    console.log(response);
-
     var movieDiv = $("<div class='movie'>");
     
     var rating = response.Rated;
@@ -44,8 +42,6 @@ $("#add-df").on("click", function(event) {
     url: queryURL2,
     method: "GET"
   }).then(function(response) {
-
-    console.log(response);
 
     var movieDiv = $("<div class='movie'>");
     
@@ -80,11 +76,23 @@ $("#add-df").on("click", function(event) {
   blurbP.text(blurb);
   $("#df-blurb-view").append(blurbP);
 
+  // empty array to hold string values of the four search fields
+  var doubleFeature = [];
+
+  doubleFeature.push(movie_1);
+  doubleFeature.push(movie_2);
+  doubleFeature.push(title);
+  doubleFeature.push(blurb);
+
+  console.log("Double-Feature: " + doubleFeature);
+
+  localStorage.key("df", JSON.stringify(doubleFeature));
+
   // set localStorage
-  localStorage.setItem("movie 1", movie_1);
-  localStorage.setItem("movie 2", movie_2);
-  localStorage.setItem("df title", title);
-  localStorage.setItem("df blurb", blurb);
+  // localStorage.setItem("movie 1", movie_1);
+  // localStorage.setItem("movie 2", movie_2);
+  // localStorage.setItem("df title", title);
+  // localStorage.setItem("df blurb", blurb);
 
   // clear input text fields
   $("#movie-input-1").val("");
@@ -95,15 +103,21 @@ $("#add-df").on("click", function(event) {
 
 // function for get items from localStorage and displaying them in search fields
 function getSearchFields() {
-  var savedMovie1 = localStorage.getItem("movie 1");
-  var savedMovie2 = localStorage.getItem("movie 2");
-  var savedTitle = localStorage.getItem("df title");
-  var savedBlurb = localStorage.getItem("df blurb");
+  // var savedMovie1 = localStorage.getItem("movie 1");
+  // var savedMovie2 = localStorage.getItem("movie 2");
+  // var savedTitle = localStorage.getItem("df title");
+  // var savedBlurb = localStorage.getItem("df blurb");
+  var savedDF = JSON.parse(localStorage.getItem("df"));
 
-  $("#movie-input-1").val(savedMovie1);
-  $("#movie-input-2").val(savedMovie2);
-  $("#df-title-input").val(savedTitle);
-  $("#df-blurb-input").val(savedBlurb);
+  $("#movie-input-1").val(savedDF[0]);
+  $("#movie-input-2").val(savedDF[1]);
+  $("#df-title-input").val(savedDF[2]);
+  $("#df-blurb-input").val(savedDF[3]);
+
+  // $("#movie-input-1").val(savedMovie1);
+  // $("#movie-input-2").val(savedMovie2);
+  // $("#df-title-input").val(savedTitle);
+  // $("#df-blurb-input").val(savedBlurb);
 }
 
 // on click function to call getSearchFields function
@@ -111,7 +125,13 @@ $("#favorite").on("click", function() {
   getSearchFields();
 })
 
-// empty/clear div which holds and displays all the content
+// empty/clear div which holds and displays all the content and search field values
 $("#clearDiv").on("click", function() {
   $("#df-display").empty();
+
+  // clear input text fields
+  $("#movie-input-1").val("");
+  $("#movie-input-2").val("");
+  $("#df-title-input").val("");
+  $("#df-blurb-input").val("");
 })
