@@ -1,11 +1,16 @@
-// on click event handler for movie 1
-$("#add-movie-1").on("click", function(event) {
+// universal on click event handler for movie 
+$("#add-df").on("click", function(event) {
   event.preventDefault();
 
+  // variables for capturing movie titles
   var movie_1 = $("#movie-input-1").val().trim();
+  var movie_2 = $("#movie-input-2").val().trim();
 
-  var queryURL = "http://www.omdbapi.com/?i=tt3896198&t=" + movie_1 + "&apikey=7d0feada"
+  // variables for the API queries
+  var queryURL = "http://www.omdbapi.com/?i=tt3896198&t=" + movie_1 + "&apikey=7d0feada";
+  var queryURL2 = "http://www.omdbapi.com/?i=tt3896198&t=" + movie_2 + "&apikey=7d0feada";
 
+  // ajax call for movie_1
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -34,20 +39,9 @@ $("#add-movie-1").on("click", function(event) {
     $("#movies-view-1").append(movieDiv);
   })
 
-  // clear movie input 1 text field
-  $("#movie-input-1").val("");
-})
-
-// on click event handler for movie 2
-$("#add-movie-2").on("click", function(event) {
-  event.preventDefault();
-
-  var movie_2 = $("#movie-input-2").val().trim();
-
-  var queryURL = "http://www.omdbapi.com/?i=tt3896198&t=" + movie_2 + "&apikey=7d0feada"
-
+  // ajax call for movie 2
   $.ajax({
-    url: queryURL,
+    url: queryURL2,
     method: "GET"
   }).then(function(response) {
 
@@ -72,52 +66,52 @@ $("#add-movie-2").on("click", function(event) {
     movieDiv.append(image);
 
     $("#movies-view-2").append(movieDiv);
-
-    // setting movie-1 to localStorage
-    localStorage.setItem("movie-1", movieDiv);
   })
 
-  // clear movie input 2 text field
-  $("#movie-input-2").val("");
-})
-
-// on click event handler for displaying double-feature title
-$("#add-df-title").on("click", function(event) {
-  event.preventDefault();
-
+  // double-feature title display
   var title = $("#df-title-input").val().trim();
   var titleH2 = $("<h2>");
-
   titleH2.text(title);
+  $("#df-title-view").append(titleH2);
 
-  $("#df-title-view").append(title);
-
-  // setting title to localStorage
-  localStorage.setItem("title", title);
-  console.log(title);
-
-  // clear the double-feature title text field
-  $("#df-title-input").val("");
-})
-
-// on click event handler for displaying double-feature blurb
-$("#add-df-blurb").on("click", function(event) {
-  event.preventDefault();
-  
+  // double-feature blurb display
   var blurb = $("#df-blurb-input").val().trim();
   var blurbP = $("<p>");
-
   blurbP.text(blurb);
-
   $("#df-blurb-view").append(blurbP);
 
-  // clear the double-feature blurb text field
+  // set localStorage
+  localStorage.setItem("movie 1", movie_1);
+  localStorage.setItem("movie 2", movie_2);
+  localStorage.setItem("df title", title);
+  localStorage.setItem("df blurb", blurb);
+
+  // clear input text fields
+  $("#movie-input-1").val("");
+  $("#movie-input-2").val("");
+  $("#df-title-input").val("");
   $("#df-blurb-input").val("");
+});
+
+// function for get items from localStorage and displaying them in search fields
+function getSearchFields() {
+  var savedMovie1 = localStorage.getItem("movie 1");
+  var savedMovie2 = localStorage.getItem("movie 2");
+  var savedTitle = localStorage.getItem("df title");
+  var savedBlurb = localStorage.getItem("df blurb");
+
+  $("#movie-input-1").val(savedMovie1);
+  $("#movie-input-2").val(savedMovie2);
+  $("#df-title-input").val(savedTitle);
+  $("#df-blurb-input").val(savedBlurb);
+}
+
+// on click function to call getSearchFields function
+$("#favorite").on("click", function() {
+  getSearchFields();
 })
 
-$("#favorite").on("click", function(event) {
-  event.preventDefault();
-
-  var faveTitle = localStorage.getItem("title");
-  $("#df-title-view").text(faveTitle);
+// empty / clear all content holding divs
+$("#clearDiv").on("click", function() {
+  $("#df-display").empty();
 })
