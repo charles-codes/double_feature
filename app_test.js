@@ -18,6 +18,10 @@ $("#add-df").on("click", function(event) {
 
     var movieDiv = $("<div class='movie'>");
     
+    var imgURL = response.Poster;
+    var image = $("<img>").attr("src", imgURL);
+    movieDiv.append(image);
+
     var rating = response.Rated;
     var pOne = $("<p>").text("Rating: " + rating);
     movieDiv.append(pOne);
@@ -29,10 +33,6 @@ $("#add-df").on("click", function(event) {
     var plot = response.Plot;
     var pThree = $("<p>").text("Plot: " + plot);
     movieDiv.append(pThree);
-
-    var imgURL = response.Poster;
-    var image = $("<img>").attr("src", imgURL);
-    movieDiv.append(image);
 
     $("#movies-view-1").append(movieDiv);
   })
@@ -45,6 +45,10 @@ $("#add-df").on("click", function(event) {
 
     var movieDiv = $("<div class='movie'>");
     
+    var imgURL = response.Poster;
+    var image = $("<img>").attr("src", imgURL);
+    movieDiv.append(image);
+
     var rating = response.Rated;
     var pOne = $("<p>").text("Rating: " + rating);
     movieDiv.append(pOne);
@@ -56,10 +60,6 @@ $("#add-df").on("click", function(event) {
     var plot = response.Plot;
     var pThree = $("<p>").text("Plot: " + plot);
     movieDiv.append(pThree);
-
-    var imgURL = response.Poster;
-    var image = $("<img>").attr("src", imgURL);
-    movieDiv.append(image);
 
     $("#movies-view-2").append(movieDiv);
   })

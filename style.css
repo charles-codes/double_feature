@@ -1,0 +1,69 @@
+#title-blurb-display {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 2;
+}
+
+#df-title-view {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+h2 {
+  text-align: center;
+}
+
+#df-blurb-view {
+  display: grid;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#df-display {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 1;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+
+#df-title-view {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#df-blurb-view {
+  display: grid;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#movies-view-1 {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  border: solid black 5px;
+  border-radius: 45px;
+  padding: 10px;
+}
+
+#movies-view-2 {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1;
+  border: solid black 5px;
+  border-radius: 45px;
+  padding: 10px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  text-align: center;
+}
