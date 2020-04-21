@@ -57,6 +57,17 @@ label {
   font-size: 18px;
 }
 
+#add-df {
+  border-radius: 25px;
+  width: 20%;
+  height: 25px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border: solid coral 1px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 #title-blurb-display {
   display: grid;
   grid-template-columns: 1;
