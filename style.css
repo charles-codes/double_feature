@@ -72,6 +72,7 @@ label {
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: 2;
+  border-top: solid black 5px;
 }
 
 #df-title-view {
