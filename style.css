@@ -16,6 +16,11 @@ h1 {
   font-size: 22px;
 }
 
+#form-div {
+  display: block;
+  text-align: center;
+}
+
 #df-title-input {
   border-radius: 25px;
   width: 20%;
