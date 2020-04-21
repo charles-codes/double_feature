@@ -6,6 +6,50 @@ header {
   font-size: 80px;
   /* font-style: oblique 80deg; */
   transform: skewX(-25deg);
+  text-shadow: coral 2px 2px;
+  text-align: center;
+  border-bottom: solid 4px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 22px;
+}
+
+#df-title-input {
+  border-radius: 25px;
+  width: 20%;
+  height: 25px;
+  padding: 5px;
+  background-color: coral;
+  color: white;
+}
+
+#df-blurb-input {
+  border-radius: 25px;
+  width: 20%;
+  height: 25px;
+  padding: 5px;
+  transition: width 0.4s ease-in-out;
+  background-color: coral;
+  color: white;
+}
+
+#df-blurb-input:focus {
+  width: 80%;
+}
+
+.movie-inputs {
+  border-radius: 25px;
+  width: 20%;
+  height: 25px;
+  padding: 5px;
+  background-color: coral;
+  color: white;
+}
+
+label {
+  font-size: 18px;
 }
 
 #title-blurb-display {
@@ -76,4 +120,10 @@ img {
 
 p {
   text-align: center;
+}
+
+footer {
+  text-align: center;
+  border-top: solid black 4px;
+  padding-top: 10px;
 }

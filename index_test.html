@@ -18,27 +18,25 @@
     <header>DOUBLE - FEATURE</header>
 
     <div class="container">
-      <h1>Find your films to curate your Double-Feature</h1>
+      <h1>Curate Your Own Double-Feature</h1>
 
       <!-- empty div to view favorite buttons -->
       <div id="buttons-view"></div>
 
       <!-- form for inputting search values -->
       <form id="movie-form">
-        <label for="movie-input">Select 1st Feature</label>
-        <input type="text" id="movie-input-1">
-        <br><br>
-
-        <label for="movie-input">Select 2nd Feature</label>
-        <input type="text" id="movie-input-2">
-        <br><br>
-
         <label for="movie-input">Double-Feature Title</label>
-        <input type="text" id="df-title-input">
-        <br><br>
+        <input type="text" id="df-title-input" placeholder="Choose a fun title for your Double-Feature">
 
         <label for="movie-input">Double-Feature Blurb</label>
-        <input type="text" id="df-blurb-input">
+        <input type="text" id="df-blurb-input" placeholder="Write a descriptive blurb for your Double-Feature">
+        <br><br>
+
+        <label for="movie-input">1st Feature</label>
+        <input type="text" id="movie-input-1" class="movie-inputs" placeholder="Choose your first film">
+
+        <label for="movie-input">2nd Feature</label>
+        <input type="text" id="movie-input-2" class="movie-inputs" placeholder="Choose your second film">
         <br><br>
 
         <input type="submit" value="Create Double-Feature" id="add-df">

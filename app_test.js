@@ -22,13 +22,24 @@ $("#add-df").on("click", function(event) {
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
 
-    var director = response.Director;
-    var pOne = $("<p>").text("Directed by " + director);
+    var plot = response.Plot;
+    var pOne = $("<p>").text(plot);
     movieDiv.append(pOne);
 
-    var plot = response.Plot;
-    var pThree = $("<p>").text("Plot: " + plot);
+    var hr = $("<hr>");
+    movieDiv.append(hr);
+
+    var director = response.Director;
+    var pTwo = $("<p>").text("Directed by " + director);
+    movieDiv.append(pTwo);
+
+    var year = response.Year;
+    var pThree = $("<p>").text(year);
     movieDiv.append(pThree);
+
+    var length = response.Runtime;
+    var pFour = $("<p>").text(length + "utes")
+    movieDiv.append(pFour);
 
     $("#movies-view-1").append(movieDiv);
   })
@@ -45,13 +56,24 @@ $("#add-df").on("click", function(event) {
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
 
-    var director = response.Director;
-    var pOne = $("<p>").text("Directed by " + director);
+    var plot = response.Plot;
+    var pOne = $("<p>").text(plot);
     movieDiv.append(pOne);
 
-    var plot = response.Plot;
-    var pThree = $("<p>").text("Plot: " + plot);
+    var hr = $("<hr>");
+    movieDiv.append(hr);
+
+    var director = response.Director;
+    var pTwo = $("<p>").text("Directed by " + director);
+    movieDiv.append(pTwo);
+
+    var year = response.Year;
+    var pThree = $("<p>").text(year);
     movieDiv.append(pThree);
+
+    var length = response.Runtime;
+    var pFour = $("<p>").text(length + "utes")
+    movieDiv.append(pFour);
 
     $("#movies-view-2").append(movieDiv);
   })
@@ -124,6 +146,7 @@ $("#favorite").on("click", function() {
 // empty/clear div which holds and displays all the content and search field values
 $("#clearDiv").on("click", function() {
   $("#df-display").empty();
+  $("#title-blurb-display").empty();
 
   // clear input text fields
   $("#movie-input-1").val("");
