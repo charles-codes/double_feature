@@ -58,6 +58,11 @@ label {
   font-size: 18px;
 }
 
+::placeholder {
+  color: white;
+  opacity: 1;
+}
+
 #add-df {
   /* border-radius: 25px; */
   width: 10%;
