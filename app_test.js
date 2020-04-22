@@ -145,8 +145,13 @@ $("#favorite").on("click", function() {
 
 // empty/clear div which holds and displays all the content and search field values
 $("#clearDiv").on("click", function() {
-  $("#df-display").empty();
-  $("#title-blurb-display").empty();
+  // clear both title and blurb display
+  $("#df-title-view").empty();
+  $("#df-blurb-view").empty();
+  
+  // clear both movie displays
+  $("#movies-view-1").empty();
+  $("#movies-view-2").empty()
 
   // clear input text fields
   $("#movie-input-1").val("");

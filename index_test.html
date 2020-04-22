@@ -18,7 +18,7 @@
     <header>DOUBLE - FEATURE</header>
 
     <div class="container">
-      <h1>Curate Your Own Double-Feature</h1>
+      <h1>Curate A Double-Feature</h1>
 
       <!-- empty div to view favorite buttons -->
       <div id="buttons-view"></div>
@@ -27,7 +27,7 @@
       <div id="form-div">
         <form id="movie-form">
           <label for="movie-input">Double-Feature Title</label>
-          <input type="text" id="df-title-input" placeholder="Choose a fun title for your Double-Feature">
+          <input type="text" id="df-title-input" placeholder="Choose an apt title for your Double-Feature">
           <br><br>
 
           <label for="movie-input">Double-Feature Blurb</label>
@@ -41,7 +41,7 @@
           <input type="text" id="movie-input-2" class="movie-inputs" placeholder="Choose your second film">
           <br><br>
   
-          <input type="submit" value="Create Double-Feature" id="add-df">
+          <input type="submit" value="CURATE" id="add-df">
         </form>
       </div>
     
@@ -49,23 +49,25 @@
     </div>
 
     <!-- button for favorite / maybe don't need??? -->
-    <button id="favorite">Favorite</button>
+    <button id="favorite">Previous Search</button>
     <br><br>
 
     <!-- button for clearing/emptying the content display div -->
     <button id="clearDiv">Clear</button>
     <br><br>
 
-    <!-- div for double-feature title and blurb display -->
-    <div class="container" id="title-blurb-display">
-      <div id="df-title-view"></div>
-      <div id="df-blurb-view"></div>
-    </div>
-  
-    <!-- empty div for displaying double-feature content (movies, df title, and df blurb) -->
-    <div class="container" id="df-display">
-      <div id="movies-view-1"></div>
-      <div id="movies-view-2"></div>
+    <div id="df-whole">
+      <!-- div for double-feature title and blurb display -->
+      <div class="container" id="title-blurb-display">
+        <div id="df-title-view"></div>
+        <div id="df-blurb-view"></div>
+      </div>
+    
+      <!-- empty div for displaying double-feature content (movies, df title, and df blurb) -->
+      <div class="container" id="df-display">
+        <div id="movies-view-1"></div>
+        <div id="movies-view-2"></div>
+      </div>
     </div>
 
     <br>
