@@ -9,6 +9,7 @@ header {
   text-shadow: coral 2px 2px;
   text-align: center;
   border-bottom: solid 4px;
+  border-right: solid 4px;
 }
 
 h1 {
