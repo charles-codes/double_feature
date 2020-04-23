@@ -118,21 +118,24 @@ $("#add-df").on("click", function(event) {
   $("#movie-input-2").val("");
   $("#df-title-input").val("");
   $("#df-blurb-input").val("");
+
+  // call renderButtons function
+  // renderButtons();
 });
 
-function renderButtons() {
-  // clearing div that holds favorite buttons so as to not repeat
-  $("#buttons-view").empty();
+// function renderButtons() {
+//   // clearing div that holds favorite buttons so as to not repeat
+//   $("#buttons-view").empty();
 
-  for (var i = 0; i < dfArray.length; i++) {
+//   for (var i = 0; i < dfArray.length; i++) {
 
-    var button = $("<button>");
-    button.addClass("df-favorite-button");
-    button.text(title);
+//     var button = $("<button>");
+//     button.addClass("df-favorite-button");
+//     button.text(title);
 
-    $("#buttons-view").append(button);
-  }
-}
+//     $("#buttons-view").append(button);
+//   }
+// }
 
 // function for get items from localStorage and displaying them in search fields
 function getSearchFields() {
@@ -159,7 +162,7 @@ $("#favorite").on("click", function() {
 })
 
 // empty/clear div which holds and displays all the content and search field values
-$("#clearDiv").on("click", function() {
+$("#clear-div").on("click", function() {
   // clear both title and blurb display
   $("#df-title-view").empty();
   $("#df-blurb-view").empty();

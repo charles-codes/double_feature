@@ -4,7 +4,6 @@ body {
 
 header {
   font-size: 80px;
-  /* font-style: oblique 80deg; */
   transform: skewX(-25deg);
   text-shadow: coral 2px 2px;
   text-align: center;
@@ -64,7 +63,6 @@ label {
 }
 
 #add-df {
-  /* border-radius: 25px; */
   width: 10%;
   height: 45px;
   padding: 5px;
