@@ -90,7 +90,10 @@ $("#add-df").on("click", function(event) {
   blurbP.text(blurb);
   $("#df-blurb-view").append(blurbP);
 
-  // empty array to hold string values of the four search fields
+  // empty array
+  var dfArray = [];
+  
+  // object to hold each of the string values to populate the search fields
   var doubleFeature = {
     feature_1: movie_1,
     feature_2: movie_2,
@@ -101,8 +104,6 @@ $("#add-df").on("click", function(event) {
   var dfArray = [];
 
   dfArray.push(doubleFeature);
-
-  console.log("Double-Feature: " + doubleFeature);
 
   localStorage.setItem("df", JSON.stringify(dfArray[0]));
 
@@ -118,6 +119,20 @@ $("#add-df").on("click", function(event) {
   $("#df-title-input").val("");
   $("#df-blurb-input").val("");
 });
+
+function renderButtons() {
+  // clearing div that holds favorite buttons so as to not repeat
+  $("#buttons-view").empty();
+
+  for (var i = 0; i < dfArray.length; i++) {
+
+    var button = $("<button>");
+    button.addClass("df-favorite-button");
+    button.text(title);
+
+    $("#buttons-view").append(button);
+  }
+}
 
 // function for get items from localStorage and displaying them in search fields
 function getSearchFields() {
