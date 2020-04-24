@@ -90,6 +90,7 @@ $("#add-df").on("click", function(event) {
   blurbP.text(blurb);
   $("#df-blurb-view").append(blurbP);
 
+  // logic to capture search field values and to eventually display them as buttons
   // empty array
   var dfArray = [];
   
@@ -105,55 +106,35 @@ $("#add-df").on("click", function(event) {
 
   dfArray.push(doubleFeature);
 
-  localStorage.setItem("df", JSON.stringify(dfArray[0]));
+  for (var i = 0; i < dfArray.length; i++) {
 
-  // set localStorage
-  // localStorage.setItem("movie 1", movie_1);
-  // localStorage.setItem("movie 2", movie_2);
-  // localStorage.setItem("df title", title);
-  // localStorage.setItem("df blurb", blurb);
+    // $("#buttons-view").empty();
 
+    localStorage.setItem("df", JSON.stringify(dfArray[i]));
+    console.log(i);
+
+    var button = $("<button>");
+    button.addClass("df-favorite-button");
+    button.text(title);
+
+    $("#buttons-view").append(button);
+  }
+  
   // clear input text fields
   $("#movie-input-1").val("");
   $("#movie-input-2").val("");
   $("#df-title-input").val("");
   $("#df-blurb-input").val("");
-
-  // call renderButtons function
-  // renderButtons();
 });
 
-// function renderButtons() {
-//   // clearing div that holds favorite buttons so as to not repeat
-//   $("#buttons-view").empty();
-
-//   for (var i = 0; i < dfArray.length; i++) {
-
-//     var button = $("<button>");
-//     button.addClass("df-favorite-button");
-//     button.text(title);
-
-//     $("#buttons-view").append(button);
-//   }
-// }
-
-// function for get items from localStorage and displaying them in search fields
+// function to get items from localStorage and display them in search fields
 function getSearchFields() {
-  // var savedMovie1 = localStorage.getItem("movie 1");
-  // var savedMovie2 = localStorage.getItem("movie 2");
-  // var savedTitle = localStorage.getItem("df title");
-  // var savedBlurb = localStorage.getItem("df blurb");
   var savedDF = JSON.parse(localStorage.getItem("df"));
 
   $("#movie-input-1").val(savedDF.feature_1);
   $("#movie-input-2").val(savedDF.feature_2);
   $("#df-title-input").val(savedDF.DFTitle);
   $("#df-blurb-input").val(savedDF.DFBlurb);
-
-  // $("#movie-input-1").val(savedMovie1);
-  // $("#movie-input-2").val(savedMovie2);
-  // $("#df-title-input").val(savedTitle);
-  // $("#df-blurb-input").val(savedBlurb);
 }
 
 // on click function to call getSearchFields function
@@ -176,4 +157,9 @@ $("#clear-div").on("click", function() {
   $("#movie-input-2").val("");
   $("#df-title-input").val("");
   $("#df-blurb-input").val("");
+})
+
+// clear favorite search buttons
+$("#clear-buttons").on("click", function() {
+  $("#buttons-view").empty();
 })
