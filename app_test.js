@@ -102,8 +102,6 @@ $("#add-df").on("click", function(event) {
     DFBlurb: blurb
   }
 
-  var dfArray = [];
-
   dfArray.push(doubleFeature);
 
   for (var i = 0; i < dfArray.length; i++) {
@@ -125,7 +123,6 @@ $("#add-df").on("click", function(event) {
   $("#df-blurb-input").val("");
 });
 
-// on click function to call getSearchFields function
 $(document).on("click", ".df-favorite-button", function() {
   event.preventDefault();
 
