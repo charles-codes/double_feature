@@ -125,16 +125,6 @@ $("#add-df").on("click", function(event) {
   $("#df-blurb-input").val("");
 });
 
-// function to get items from localStorage and display them in search fields
-// function getSearchFields() {
-//   var savedDF = JSON.parse(localStorage.getItem("'" + i + "'"));
-
-//   $("#movie-input-1").val(savedDF.dfArrary[i].feature_1);
-//   $("#movie-input-2").val(savedDF.feature_2);
-//   $("#df-title-input").val(savedDF.DFTitle);
-//   $("#df-blurb-input").val(savedDF.DFBlurb);
-// }
-
 // on click function to call getSearchFields function
 $(document).on("click", ".df-favorite-button", function() {
   event.preventDefault();
