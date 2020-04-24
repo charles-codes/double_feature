@@ -108,9 +108,7 @@ $("#add-df").on("click", function(event) {
 
   for (var i = 0; i < dfArray.length; i++) {
 
-    // $("#buttons-view").empty();
-
-    localStorage.setItem("df", JSON.stringify(dfArray[i]));
+    localStorage.setItem("'" + i + "'", JSON.stringify(dfArray[i]));
     console.log(i);
 
     var button = $("<button>");
@@ -128,18 +126,27 @@ $("#add-df").on("click", function(event) {
 });
 
 // function to get items from localStorage and display them in search fields
-function getSearchFields() {
+// function getSearchFields() {
+//   var savedDF = JSON.parse(localStorage.getItem("'" + i + "'"));
+
+//   $("#movie-input-1").val(savedDF.dfArrary[i].feature_1);
+//   $("#movie-input-2").val(savedDF.feature_2);
+//   $("#df-title-input").val(savedDF.DFTitle);
+//   $("#df-blurb-input").val(savedDF.DFBlurb);
+// }
+
+// on click function to call getSearchFields function
+$(document).on("click", ".df-favorite-button", function() {
+  event.preventDefault();
+
+  console.log("I clicked the favorite button");
+
   var savedDF = JSON.parse(localStorage.getItem("df"));
 
   $("#movie-input-1").val(savedDF.feature_1);
   $("#movie-input-2").val(savedDF.feature_2);
   $("#df-title-input").val(savedDF.DFTitle);
   $("#df-blurb-input").val(savedDF.DFBlurb);
-}
-
-// on click function to call getSearchFields function
-$("#favorite").on("click", function() {
-  getSearchFields();
 })
 
 // empty/clear div which holds and displays all the content and search field values
