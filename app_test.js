@@ -108,7 +108,7 @@ $("#add-df").on("click", function(event) {
 
   for (var i = 0; i < dfArray.length; i++) {
 
-    localStorage.setItem("'" + i + "'", JSON.stringify(dfArray[i]));
+    localStorage.setItem("df", JSON.stringify(dfArray[i]));
     console.log(i);
 
     var button = $("<button>");
