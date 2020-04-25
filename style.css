@@ -176,6 +176,8 @@ p {
 
 footer {
   text-align: center;
-  border-top: solid black 4px;
-  padding-top: 10px;
+  border: solid black 4px;
+  padding: 10px;
+  background-color: black;
+  color: white;
 }
