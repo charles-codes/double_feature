@@ -104,13 +104,13 @@ $("#add-df").on("click", function(event) {
 
   dfArray.push(doubleFeature);
 
-  for (var i = 0; i < dfArray.length; i++) {
+  localStorage.setItem("df", JSON.stringify(dfArray));
 
-    localStorage.setItem("df", JSON.stringify(dfArray[i]));
-    console.log(i);
+  for (var i = 0; i < dfArray.length; i++) {
 
     var button = $("<button>");
     button.addClass("df-favorite-button");
+    button.attr("id", i);
     button.text(title);
 
     $("#buttons-view").append(button);
@@ -128,7 +128,11 @@ $(document).on("click", ".df-favorite-button", function() {
 
   console.log("I clicked the favorite button");
 
-  var savedDF = JSON.parse(localStorage.getItem("df"));
+  var id = $(".df-favorite-button").val();
+  console.log(id);
+
+  var savedDF = JSON.parse(localStorage.getItem("df") || []).find(pr => pr.id === id);
+  console.log(savedDF);
 
   $("#movie-input-1").val(savedDF.feature_1);
   $("#movie-input-2").val(savedDF.feature_2);

@@ -16,25 +16,30 @@ $("#add-df").on("click", function(event) {
     method: "GET"
   }).then(function(response) {
 
-    console.log(response);
-
     var movieDiv = $("<div class='movie'>");
     
-    var rating = response.Rated;
-    var pOne = $("<p>").text("Rating: " + rating);
-    movieDiv.append(pOne);
-
-    var released = response.Released;
-    var pTwo = $("<p>").text("Released: " + released);
-    movieDiv.append(pTwo);
-
-    var plot = response.Plot;
-    var pThree = $("<p>").text("Plot: " + plot);
-    movieDiv.append(pThree);
-
     var imgURL = response.Poster;
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
+
+    var plot = response.Plot;
+    var pOne = $("<p>").text(plot);
+    movieDiv.append(pOne);
+
+    var hr = $("<hr>");
+    movieDiv.append(hr);
+
+    var director = response.Director;
+    var pTwo = $("<p>").text("Directed by " + director);
+    movieDiv.append(pTwo);
+
+    var year = response.Year;
+    var pThree = $("<p>").text(year);
+    movieDiv.append(pThree);
+
+    var length = response.Runtime;
+    var pFour = $("<p>").text(length + "utes")
+    movieDiv.append(pFour);
 
     $("#movies-view-1").append(movieDiv);
   })
@@ -45,25 +50,30 @@ $("#add-df").on("click", function(event) {
     method: "GET"
   }).then(function(response) {
 
-    console.log(response);
-
     var movieDiv = $("<div class='movie'>");
     
-    var rating = response.Rated;
-    var pOne = $("<p>").text("Rating: " + rating);
-    movieDiv.append(pOne);
-
-    var released = response.Released;
-    var pTwo = $("<p>").text("Released: " + released);
-    movieDiv.append(pTwo);
-
-    var plot = response.Plot;
-    var pThree = $("<p>").text("Plot: " + plot);
-    movieDiv.append(pThree);
-
     var imgURL = response.Poster;
     var image = $("<img>").attr("src", imgURL);
     movieDiv.append(image);
+
+    var plot = response.Plot;
+    var pOne = $("<p>").text(plot);
+    movieDiv.append(pOne);
+
+    var hr = $("<hr>");
+    movieDiv.append(hr);
+
+    var director = response.Director;
+    var pTwo = $("<p>").text("Directed by " + director);
+    movieDiv.append(pTwo);
+
+    var year = response.Year;
+    var pThree = $("<p>").text(year);
+    movieDiv.append(pThree);
+
+    var length = response.Runtime;
+    var pFour = $("<p>").text(length + "utes")
+    movieDiv.append(pFour);
 
     $("#movies-view-2").append(movieDiv);
   })
@@ -79,13 +89,7 @@ $("#add-df").on("click", function(event) {
   var blurbP = $("<p>");
   blurbP.text(blurb);
   $("#df-blurb-view").append(blurbP);
-
-  // set localStorage
-  localStorage.setItem("movie 1", movie_1);
-  localStorage.setItem("movie 2", movie_2);
-  localStorage.setItem("df title", title);
-  localStorage.setItem("df blurb", blurb);
-
+  
   // clear input text fields
   $("#movie-input-1").val("");
   $("#movie-input-2").val("");
@@ -93,25 +97,19 @@ $("#add-df").on("click", function(event) {
   $("#df-blurb-input").val("");
 });
 
-// function for get items from localStorage and displaying them in search fields
-function getSearchFields() {
-  var savedMovie1 = localStorage.getItem("movie 1");
-  var savedMovie2 = localStorage.getItem("movie 2");
-  var savedTitle = localStorage.getItem("df title");
-  var savedBlurb = localStorage.getItem("df blurb");
+// empty/clear div which holds and displays all the content and search field values
+$("#clear-div").on("click", function() {
+  // clear both title and blurb display
+  $("#df-title-view").empty();
+  $("#df-blurb-view").empty();
+  
+  // clear both movie displays
+  $("#movies-view-1").empty();
+  $("#movies-view-2").empty()
 
-  $("#movie-input-1").val(savedMovie1);
-  $("#movie-input-2").val(savedMovie2);
-  $("#df-title-input").val(savedTitle);
-  $("#df-blurb-input").val(savedBlurb);
-}
-
-// on click function to call getSearchFields function
-$("#favorite").on("click", function() {
-  getSearchFields();
-})
-
-// empty / clear all content holding divs
-$("#clearDiv").on("click", function() {
-  $("#df-display").empty();
+  // clear input text fields
+  $("#movie-input-1").val("");
+  $("#movie-input-2").val("");
+  $("#df-title-input").val("");
+  $("#df-blurb-input").val("");
 })

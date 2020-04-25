@@ -15,41 +15,53 @@
   </head>
 
   <body>
-    <header>DOUBLE-FEATURE</header>
+    <header>DOUBLE - FEATURE</header>
 
     <div class="container">
-      <h1>Find your films to curate your Double-Feature</h1>
+      <h1>Curate A Double-Feature</h1>
 
-      <form id="movie-form">
-        <label for="movie-input">Select 1st Feature Film</label>
-        <input type="text" id="movie-input-1">
-        <br><br>
+      <!-- empty div to view favorite buttons -->
+      <div id="buttons-view"></div>
 
-        <label for="movie-input">Select 2nd Feature Film</label>
-        <input type="text" id="movie-input-2">
-        <br><br>
+      <!-- form for inputting search values -->
+      <div id="form-div">
+        <form id="movie-form">
+          <label for="movie-input">Double-Feature Title</label>
+          <input type="text" id="df-title-input" placeholder="Choose an apt title for your Double-Feature">
+          <br><br>
 
-        <label for="movie-input">Double-Feature Title</label>
-        <input type="text" id="df-title-input">
-        <br><br>
+          <label for="movie-input">Double-Feature Blurb</label>
+          <input type="text" id="df-blurb-input" placeholder="Write a descriptive blurb for your Double-Feature">
+          <br><br>
+  
+          <label for="movie-input">1st Feature</label>
+          <input type="text" id="movie-input-1" class="movie-inputs" placeholder="Choose your first film">
+  
+          <label for="movie-input">2nd Feature</label>
+          <input type="text" id="movie-input-2" class="movie-inputs" placeholder="Choose your second film">
+          <br><br>
+  
+          <input type="submit" value="CURATE" id="add-df">
+        </form>
+      </div>
+    
 
-        <label for="movie-input">Double-Feature Blurb</label>
-        <input type="text" id="df-blurb-input">
-        <br><br>
-        <input type="submit" value="Create Double-Feature" id="add-df">
-      </form>
     </div>
 
-    <button id="favorite">Favorite</button>
-    <button id="clearDiv">Clear</button>
+    <div id="button-div">
+      <!-- button for clearing/emptying the content display div -->
+      <button id="clear-div">CLEAR</button>
+      <br>
+    </div>
 
-    <br>
-
-    <div class="container" id="df-display">
+    <!-- div for double-feature title and blurb display -->
+    <div class="container" id="title-blurb-display">
       <div id="df-title-view"></div>
-      <hr>
       <div id="df-blurb-view"></div>
-      <hr>
+    </div>
+    
+    <!-- empty div for displaying double-feature content (movies, df title, and df blurb) -->
+    <div class="container" id="df-display">
       <div id="movies-view-1"></div>
       <div id="movies-view-2"></div>
     </div>
