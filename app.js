@@ -41,12 +41,26 @@ $("#add-df").on("click", function(event) {
     var pFour = $("<p>").text(length + "utes")
     movieDiv.append(pFour);
 
-    var pFive = $("<a>").text("Where to stream " + movie_1);
-    var justWatchLink = ("https://www.justwatch.com/us/movie/" + movie_1);
-    pFive.attr("href", justWatchLink);
-    pFive.attr("target", "_blank");
-    pFive.attr("id", "just-watch-link");
-    movieDiv.append(pFive);
+    if (movie_1.includes(" ")) {
+      var justWatchSearchLink = ("https://www.justwatch.com/us/search?q=" + movie_1);
+      var pFive = $("<a>").text("Where to stream " + movie_1 + " via JustWatch");
+      pFive.attr("href", justWatchSearchLink);
+      pFive.attr("target", "_blank");
+      pFive.attr("id", "just-watch-link");
+      movieDiv.append(pFive);
+    } else {
+      var pFive = $("<a>").text("Where to stream " + movie_1 + " via JustWatch");
+      var pImage = $("<img>").attr("src", "images/JustWatch-logo-small.png");
+      pImage.attr("id", "just-watch-logo");
+      var lineBreak = $("<br><br>");
+      pFive.append(lineBreak);
+      pFive.append(pImage);
+      var justWatchLink = ("https://www.justwatch.com/us/movie/" + movie_1);
+      pFive.attr("href", justWatchLink);
+      pFive.attr("target", "_blank");
+      pFive.attr("id", "just-watch-link");
+      movieDiv.append(pFive);
+    }
 
     $("#movies-view-1").append(movieDiv);
   })
@@ -82,13 +96,26 @@ $("#add-df").on("click", function(event) {
     var pFour = $("<p>").text(length + "utes")
     movieDiv.append(pFour);
 
-
-    var pFive = $("<a>").text("Where to stream " + movie_2);
-    var justWatchLink = ("https://www.justwatch.com/us/movie/" + movie_2);
-    pFive.attr("href", justWatchLink);
-    pFive.attr("target", "_blank");
-    pFive.attr("id", "just-watch-link");
-    movieDiv.append(pFive);
+    if (movie_2.includes(" ")) {
+      var justWatchSearchLink = ("https://www.justwatch.com/us/search?q=" + movie_2);
+      var pFive = $("<a>").text("Where to stream " + movie_2 + " via JustWatch");
+      pFive.attr("href", justWatchSearchLink);
+      pFive.attr("target", "_blank");
+      pFive.attr("id", "just-watch-link");
+      movieDiv.append(pFive);
+    } else {
+      var pFive = $("<a>").text("Where to stream " + movie_2 + " via JustWatch");
+      var pImage = $("<img>").attr("src", "images/JustWatch-logo-small.png");
+      pImage.attr("id", "just-watch-logo");
+      var lineBreak = $("<br><br>");
+      pFive.append(lineBreak);
+      pFive.append(pImage);
+      var justWatchLink = ("https://www.justwatch.com/us/movie/" + movie_2);
+      pFive.attr("href", justWatchLink);
+      pFive.attr("target", "_blank");
+      pFive.attr("id", "just-watch-link");
+      movieDiv.append(pFive);
+    }
 
     $("#movies-view-2").append(movieDiv);
   })

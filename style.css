@@ -180,6 +180,11 @@ p {
   text-align: center;
 }
 
+#just-watch-logo {
+  width: 100px;
+  height: 25px;
+}
+
 footer {
   text-align: center;
   border: solid black 4px;
