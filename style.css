@@ -10,6 +10,7 @@ html {
 header {
   background-color: black;
   margin: -10px;
+  border-bottom: dashed coral 4px;
 }
 
 #header-text {
